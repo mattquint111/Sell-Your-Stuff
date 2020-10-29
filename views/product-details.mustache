@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> header}}
+    <title>Sell Your Stuff</title>
+  </head>
+  <body>
+
+
+    <div class="container">
+        {{> menu}}
+        <img src="/uploads/{{imageURL}}" width=300>
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <small>${{price}}</small>
+        
+    </div>
+
+    
+
+    {{> footer}}
+  </body>
+</html>

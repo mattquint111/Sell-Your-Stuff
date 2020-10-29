@@ -6,6 +6,17 @@ const models = require('../models') //sequelize models //go up 2-routes to find 
 const { Router } = require('express')
 const SALT_ROUNDS = 10 // bcrypt
 
+router.get('/products/:productId', async (req, res) => {
+    const productId = req.params.productId
+    const product = await models.Product.findByPk(productId)
+
+    res.render('product-details', product.dataValues)
+})
+
+router.get('/', async (req,res) => {
+    let products = await models.Product.findAll()
+    res.render('index', {products: products})
+})
 
 router.get('/register', (req,res) => {
     res.render('register')
